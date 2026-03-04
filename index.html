@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alfredo M. Semilla Jr. | Front-End Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Alfredo M. Semilla Jr. — BSIT student and aspiring Front-End Developer." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --line:#e5e7eb;
+      --card:#f9fafb;
+      --shadow: 0 10px 25px rgba(17,24,39,.08);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{
+      width:min(1020px, 92vw);
+      margin:0 auto;
+      padding:28px 0 60px;
+    }
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px 0 10px;
+      border-bottom:1px solid var(--line);
+    }
+    .brand h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-0.02em;
+    }
+    .brand p{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .top-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      font-size:14px;
+      color:var(--text);
+      box-shadow: 0 1px 0 rgba(17,24,39,.04);
+      transition:.15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow: var(--shadow)}
+    nav{
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .nav-inner{
+      width:min(1020px, 92vw);
+      margin:0 auto;
+      display:flex;
+      gap:14px;
+      padding:10px 0;
+      overflow:auto;
+    }
+    .nav-inner a{
+      font-size:14px;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .nav-inner a:hover{
+      background:var(--card);
+      color:var(--text);
+    }
+    .hero{
+      padding:26px 0 6px;
+    }
+    .hero h2{
+      margin:0;
+      font-size:22px;
+      letter-spacing:-0.01em;
+    }
+    .hero p{
+      margin:10px 0 0;
+      color:var(--muted);
+      max-width:72ch;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+    @media (min-width: 860px){
+      .grid{grid-template-columns: 1.15fr .85fr;}
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:-0.01em;
+    }
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    .pill-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .pill{
+      font-size:13px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+    }
+    section{
+      padding-top:26px;
+      scroll-margin-top:70px;
+    }
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:8px 0;
+      border-bottom:1px solid var(--line);
+      margin-bottom:14px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size:18px;
+    }
+    .muted{color:var(--muted)}
+    .projects{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+    @media (min-width: 860px){
+      .projects{grid-template-columns: 1fr 1fr;}
+    }
+    .project{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px;
+    }
+    .project h4{margin:0 0 8px; font-size:16px}
+    .project p{margin:0; color:var(--muted)}
+    .project .meta{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .footer{
+      margin-top:34px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .small-link{color:var(--muted); text-decoration:underline; text-underline-offset:3px}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <h1>Alfredo M. Semilla Jr.</h1>
+        <p>Front-End Developer • BSIT Student • Panpacific University • Expected Graduation: Oct 2026</p>
+      </div>
+
+      <div class="top-actions">
+        <a class="btn" href="#contact" title="Contact">✉️ Contact</a>
+        <!-- Replace the link below with Alfredo's GitHub profile once you know his username -->
+        <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">🧑‍💻 GitHub</a>
+      </div>
+    </header>
+
+    <div class="hero" id="about">
+      <h2>Hi! I’m Alfredo — an aspiring Front-End Developer.</h2>
+      <p>
+        I’m a BSIT student who enjoys building clean and organized web interfaces.
+        I focus on creating user-friendly layouts using HTML, CSS, and JavaScript, and I’m continuously improving my skills in responsive design and user experience.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Quick Summary</h3>
+          <ul class="list">
+            <li>Interest: Front-End Development, UI layout, responsive design</li>
+            <li>Strengths: problem-solving, teamwork, and time management</li>
+            <li>Location: San Pablo, Binalonan, Pangasinan</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Career Objective</h3>
+          <p class="muted" style="margin:0;">
+            A dedicated BSIT student interested in pursuing a career in Front-End Development, with focus on building responsive and user-friendly web interfaces.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <span class="muted">Front-End + Tools</span>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Programming</h3>
+          <div class="pill-wrap">
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">SQL (Basic)</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Tools & Technologies</h3>
+          <div class="pill-wrap">
+            <span class="pill">Bootstrap</span>
+            <span class="pill">MySQL</span>
+            <span class="pill">GitHub</span>
+            <span class="pill">Visual Studio Code</span>
+            <span class="pill">XAMPP</span>
+            <span class="pill">phpMyAdmin</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <span class="muted">Student Work</span>
+      </div>
+
+      <div class="projects">
+        <div class="project">
+          <h4>Event Organizer Management System (Final Course Output)</h4>
+          <p>
+            Assisted in developing a system that displays event information, manages schedules, and supports event registrations through an organized interface.
+          </p>
+          <div class="meta">
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <h4>Procurement Tracking System (Ongoing Project)</h4>
+          <p>
+            Currently participating in the development of a system that helps manage procurement requests, track items, and organize supply records in a centralized database.
+          </p>
+          <div class="meta">
+            <span class="pill">UI Design</span>
+            <span class="pill">MySQL</span>
+            <span class="pill">Collaboration</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <h4>Attendance Tracker Mobile App (Android Studio)</h4>
+          <p>
+            Assisted in designing the interface of a mobile application used to record and organize student attendance.
+          </p>
+          <div class="meta">
+            <span class="pill">Android Studio</span>
+            <span class="pill">UI Flow</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="section-title">
+        <h2>Certifications</h2>
+        <span class="muted">Completed</span>
+      </div>
+
+      <div class="card">
+        <ul class="list">
+          <li>Microsoft Office Specialist Word Associate (Microsoft 365 App)</li>
+          <li>Python Essentials – Cisco Networking Academy</li>
+          <li>Networking Basics – Cisco Networking Academy</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <span class="muted">Let’s connect</span>
+      </div>
+
+      <div class="card">
+        <ul class="list">
+          <li><strong>Email:</strong> <a class="small-link" href="mailto:jrsemilla03@gmail.com">jrsemilla03@gmail.com</a></li>
+          <li><strong>Phone:</strong> 0916-273-7244</li>
+          <li><strong>Location:</strong> San Pablo, Binalonan, Pangasinan</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="year"></span> Alfredo M. Semilla Jr.</div>
+      <div class="muted">Built with GitHub Pages</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
